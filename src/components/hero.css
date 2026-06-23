@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  padding-block: clamp(3.5rem, 8vw, 7rem) var(--space-section);
+  overflow: hidden;
+}
+
+/* Quiet atmosphere: a single soft radial wash in the accent, no purple blob. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 60% at 100% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--bg-tint), var(--bg) 42%);
+  z-index: -1;
+}
+
+.hero__inner {
+  text-align: left;
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--space-5);
+}
+
+.hero__title {
+  /* Conservative slope so the longest program name ("The Deluxe Standing")
+     keeps right-edge margin from 320px up, then grows on larger screens. */
+  font-size: clamp(2.05rem, 1.3rem + 3vw, 4.2rem);
+  font-weight: 600;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.hero__rule {
+  display: block;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: var(--space-4);
+  background: var(--accent);
+  transform-origin: 0 50%;
+}
+
+.hero__promise {
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 28rem;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+.hero__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.hero__metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__metaLabel {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero__metaValue {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--ink);
+}
+
+.hero__metaDivider {
+  width: 1px;
+  height: 2.5rem;
+  background: var(--line);
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.hero__note {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 600px) {
+  .hero__cta .btn {
+    min-width: 11rem;
+  }
+}

@@ -1,0 +1,84 @@
+/* Design tokens. Two salon worlds swapped via [data-salon] on <html>. */
+
+:root {
+  /* Spacing scale (4px base). */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-section: clamp(4rem, 3rem + 5vw, 8rem);
+
+  /* Fluid type, Major Third -> Perfect Fourth. */
+  --text-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --text-sm: clamp(0.84rem, 0.8rem + 0.2vw, 0.92rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
+  --text-lg: clamp(1.18rem, 1.05rem + 0.5vw, 1.4rem);
+  --text-xl: clamp(1.45rem, 1.2rem + 1vw, 1.85rem);
+  --text-2xl: clamp(1.9rem, 1.5rem + 1.6vw, 2.6rem);
+  --text-3xl: clamp(2.6rem, 1.9rem + 3vw, 4.2rem);
+
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+
+  --maxw-read: 30rem;
+  --maxw-wide: 64rem;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur: 280ms;
+
+  --shadow-soft: 0 1px 2px rgba(28, 25, 23, 0.04), 0 8px 24px rgba(28, 25, 23, 0.06);
+  --shadow-lift: 0 2px 4px rgba(28, 25, 23, 0.05), 0 18px 48px rgba(28, 25, 23, 0.12);
+
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ---- DELUXE: Onyx & Brass ---- */
+[data-salon='deluxe'] {
+  --ink: #1c1917;
+  --ink-soft: #44403c;
+  --accent: #a16207;
+  --accent-deep: #7a4e08;
+  --bg: #faf9f8;
+  --bg-tint: #f3efe9;
+  --card: #ffffff;
+  --line: #e7e2dc;
+  --muted: #6b6259;
+  --on-accent: #ffffff;
+  --on-dark: #f7f3ee;
+  --dark-surface: #1c1917;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --display-spacing: -0.01em;
+  --display-leading: 1.04;
+}
+
+/* ---- ZEN: Terracotta Commons ---- */
+[data-salon='zen'] {
+  --ink: #2a1b12;
+  --ink-soft: #5a4234;
+  --accent: #9a3412;
+  --accent-deep: #7c2a0e;
+  --accent-2: #047857;
+  --bg: #fffbeb;
+  --bg-tint: #fbf1dc;
+  --card: #ffffff;
+  --line: #f0e4dc;
+  --muted: #6b5a4e;
+  --on-accent: #ffffff;
+  --on-dark: #fdf4e3;
+  --dark-surface: #2a1b12;
+  --font-display: 'Newsreader', Georgia, serif;
+  --display-spacing: 0;
+  --display-leading: 1.08;
+}
+
+/* Confirm green falls back to brass when a salon has no accent-2. */
+[data-salon] {
+  --confirm: var(--accent-2, var(--accent));
+}

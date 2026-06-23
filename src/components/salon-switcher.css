@@ -1,0 +1,47 @@
+.switcher {
+  position: relative;
+  display: inline-flex;
+  padding: 4px;
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  gap: 2px;
+}
+
+.switcher__option {
+  position: relative;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  min-height: 40px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  transition: color var(--dur) var(--ease-expo);
+}
+
+.switcher__option[data-selected='true'] {
+  color: var(--on-accent);
+}
+
+.switcher__option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.switcher__pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: var(--shadow-soft);
+  z-index: 0;
+}
+
+.switcher__label {
+  position: relative;
+  z-index: 1;
+}

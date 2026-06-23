@@ -1,0 +1,48 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 60px;
+  padding-block: 0.6rem;
+}
+
+.topbar__wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5ch;
+}
+
+.topbar__mark {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: var(--display-spacing);
+  color: var(--ink);
+}
+
+.topbar__progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  background: var(--accent);
+}
+
+@media (max-width: 420px) {
+  .topbar__mark {
+    font-size: var(--text-base);
+  }
+}
